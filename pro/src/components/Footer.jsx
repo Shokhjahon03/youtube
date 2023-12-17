@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import pieimitiv from '../assets/subscrip.svg'
+import { NavLink } from 'react-router-dom'
 const Footer = () => {
     let [x, setX] = useState(false)
     let y = () => {
@@ -19,13 +20,15 @@ const Footer = () => {
     }
     return (
         <Fragment>
-            <footer className={x ? " ] w-full justify-between fixed left-0 bottom-0  flex  h-[61px]  pt-[9px] pl-[24px] pr-[24px] pb-[11px] border-slate-800 md:w-[160px] md:h-full  md:top-[62px] md:left-[31px] md:flex-col md: gap-[30px]bg-[#898989] md:rounded" : " w-full fixed justify-between left-0 bottom-0  flex  h-[61px]  pt-[9px] pl-[24px] pr-[24px] pb-[11px] border-slate-800 md:w-[160px] md:h-full  md:top-[62px] md:left-[31px] md:flex-col md: gap-[30px]  md:rounded md:justify-evenly"}>
+            <footer className={x ? "  bg-white w-full justify-between fixed left-0 bottom-0  flex  h-[61px]  pt-[9px] pl-[24px] pr-[24px] pb-[11px] border-slate-800 md:w-[160px] md:h-full  md:top-[62px] md:left-[31px] md:flex-col md: gap-[30px]bg-[#898989] md:rounded" : "bg-white w-full fixed justify-between left-0 bottom-0  flex  h-[61px]  pt-[9px] pl-[24px] pr-[24px] pb-[11px] border-slate-800 md:w-[160px] md:h-full  md:top-[62px] md:left-[31px] md:flex-col md: gap-[30px]  md:rounded md:justify-evenly"}>
                 {/* ........................................................................................................................................................ */}
                 <div className="hidden md:flex md:h-[96px} md: flex-col md: gap-[28px] md:items-start">
-                    <div className="flex w-[78px] justify-between items-center text-[#323131]">
-                        <button><i class='bx bxs-home-smile text-2xl' ></i></button>
-                        <p className="">Home</p>
-                    </div>
+                    <NavLink to="/">
+                        <div className="flex w-[78px] justify-between items-center text-[#323131]">
+                            <button><i class='bx bxs-home-smile text-2xl' ></i></button>
+                            <p className="">Home</p>
+                        </div>
+                    </NavLink>
                     <div className="flex w-[78px] justify-between items-center text-[#323131]">
                         <button><i class='bx bxs-hot  text-2xl' ></i></button>
                         <p className="">Trending</p>
@@ -46,10 +49,12 @@ const Footer = () => {
                 </button>
                 {/* ........................................................................................................................................................................ */}
                 <div className={b ? " hidden" : "hidden md:block"}>
-                    <button className="flex  w-[124px] items-center justify-between text-[#323131] mb-[20px]">
-                        <i class='bx bx-folder  text-2xl'></i>
-                        <p>Library</p>
-                    </button>
+                    <NavLink to="/lybr">
+                        <button className="flex  w-[124px] items-center justify-between text-[#323131] mb-[20px]">
+                            <i class='bx bx-folder  text-2xl'></i>
+                            <p>Library</p>
+                        </button>
+                    </NavLink>
                     <button className="flex  w-[124px] items-center justify-between text-[#323131] mb-[20px]">
                         <i class='bx bx-history  text-2xl'></i>
                         <p>History</p>
@@ -94,10 +99,12 @@ const Footer = () => {
                 </button>
                 <div className={x ? " flex  flex-col  items-center justify-around   bg-white  rounded w-[63px] h-[400px] fixed left-0 bottom-[61px]  transition-[1s] md:hidden" : " hidden"}>
                     <button onClick={a} className={x ? " bg-slate-50 text-black " : " text-gray-50"}><i class='bx bx-vertical-bottom w-[40px] text-2xl  font-medium'></i></button>
-                    <button >
-                        <i class='bx bx-home text-[#898989] text-2xl'></i>
-                        <p className="text-[#898989] font-normal text-xs">Home</p>
-                    </button>
+                    <NavLink to="/">
+                        <button >
+                            <i class='bx bx-home text-[#898989] text-2xl'></i>
+                            <p className="text-[#898989] font-normal text-xs">Home</p>
+                        </button>
+                    </NavLink>
                     <button className="w-[41px] h=[37px] flex flex-col items-center justify-between border-none hover:text-[#FF0000]">
                         <i class='bx bx-music text-2xl  text-[#898989]' ></i>
                         <p className="text-[#898989] font-normal text-xs">Music</p>
